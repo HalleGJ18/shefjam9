@@ -46,6 +46,9 @@
   }
   
   //neccessary variables
+  var canvasWidth = 1280;
+  var canvasHeight = 720;
+
   var tickX = 50;
   var tickY = 50;
   
@@ -54,49 +57,68 @@
   var keyS = false;
   var keyD = false;
 
-  // add temp cake
-  function cakeTest() {
-    window.requestAnimationFrame(cakeTest);
+  // player character
 
-    let newImage = new Image();
-    newImage.src = "./assets/cake1small.png"
+  var offsetX = 10;
+  var offsetY = 10;
+
+  var stepSize = 10;
+
+  function movingSprite() {
+    window.requestAnimationFrame(movingSprite);
+
+    let playerSprite = new Image();
+    playerSprite.src = "./assets/alen.png"
     
     var canvas = document.getElementById("evilCanvas");
     var c = canvas.getContext("2d");
     
-    c.drawImage(newImage, 0, 0, 128, 128);
+    var imgWidth = 128;
+    var imgHeight = 128;
 
-  }
-  
-  //main animation function
-  function drawStuff() {
-    window.requestAnimationFrame(drawStuff);
-    var canvas = document.getElementById("evilCanvas");
-    var c = canvas.getContext("2d");
-  
-    c.clearRect(0, 0, 1280, 720);
-    c.fillStyle = "blue";
-    c.fillRect(tickX, tickY, 100, 100);
-  
+    c.clearRect(0, 0, canvasWidth, canvasHeight);
+    c.drawImage(playerSprite, offsetX, offsetY, imgWidth, imgHeight);
+
     if (keyD == true) {
-      tickX += 10;
-    }
+        if (offsetX + stepSize + imgWidth <= canvasWidth) {
+            offsetX += stepSize;
+        }
+        else {
+            offsetX = canvasWidth - imgWidth
+        }
+      }
     if (keyS == true) {
-      tickY += 10;
+        if (offsetY + stepSize + imgHeight <= canvasHeight) {
+            offsetY += stepSize;
+        }
+        else {
+            offsetY = canvasHeight - imgHeight
+        }
     }
     if (keyA == true) {
-      tickX -= 10;
+        if (offsetX - stepSize >= 0) {
+            offsetX -= stepSize;
+        }
+        else {
+            offsetX = 0
+        }
     }
     if (keyW == true) {
-      tickY -= 10;
+        if (offsetY - stepSize >= 0) {
+            offsetY -= stepSize;
+        }
+        else {
+            offsetY = 0
+        }
+    
     }
+
   }
 
 //   window.requestAnimationFrame(drawStuff);
 
   window.onload = () => {
-    drawStuff()
-    cakeTest()
+    movingSprite()
 
     
   }

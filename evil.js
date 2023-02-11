@@ -63,10 +63,10 @@
 
   function genTables(c){
     let level1 = [[30,30,tableSideLen,tableSideLen],
-                  [158,30,tableSideLen,tableSideLen],
+                  [130,30,tableSideLen,tableSideLen],
                   [300,490,tableSideLen,tableSideLen],
                   [870,450,tableSideLen,tableSideLen],
-                  [287,159,tableSideLen,tableSideLen],
+                  [300,190,tableSideLen,tableSideLen],
                   [1122,275,tableSideLen,tableSideLen],
                   [700,350,tableSideLen,tableSideLen],
                   [30,360,tableSideLen,tableSideLen],

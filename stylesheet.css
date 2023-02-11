@@ -12,3 +12,22 @@
     left: 0;
     right: 0;
 }
+
+.introimg {
+    position:absolute;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    margin:auto;
+  }
+
+body {
+    margin: 0;
+    background: #282c34;
+    overflow: hidden;
+}
+
+.intro {
+    background: #fbf8e7;
+}

@@ -32,10 +32,7 @@ function renderText(c, text) {
   gradient.addColorStop(0, "rgb(255, 0, 0)");
   gradient.addColorStop(1, "rgb(255, 255, 0)");
   c.fillStyle = gradient;
-  //c.fillStyle = "rgb(255, 0, 0)";
   c.fillText(text, 650, 350);
-  //c.font = "48px serif"
-  //c.strokeText(text, 650, 350);
 }
 
 function renderCake(c){

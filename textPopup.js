@@ -1,11 +1,5 @@
 const text = [
-
-function renderCake(c){
-  let cakeSprite = new Image();
-  cakeSprite.src = "./assets/cake1.png"
-
-  c.drawImage(cakeSprite, 640, 360, 128, 128);
-
+]
 function renderText(c, text) {
   c.font = "bold 36px sans-serif";
   c.shadowColor = "rgb(190, 190, 190)";

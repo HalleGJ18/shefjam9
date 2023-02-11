@@ -79,7 +79,7 @@
     //overlap last 2 w is sprite, cake
     if(overLap(offsetX, offsetY, 690, 340, tableSideLen, cakeSize)){
       textTimeOuts.push(globalTime + 100)
-      console.log('added');
+      // console.log('added');
     }
 
     for (let i = 0; i < textTimeOuts.length; i++) {

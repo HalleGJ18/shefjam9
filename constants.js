@@ -19,11 +19,19 @@ var offsetX = 500;
 var offsetY = 300;
 const stepSize = 7;
 
+//player size
+var playerWidth = 100;
+
 // cake variables
 const cakeSize = tableSideLen/2;;
 var cakes = {};
 var num_of_cakes = 10;
 var cakeImgs = {};
+
+// cart variables
+var cartPosX = 640-(cartImgSide/2);
+var cartPosY = 720-(cartImgSide/2);
+var cartImgSide = 300;
 
 // time variables
 var globalTime = 0;

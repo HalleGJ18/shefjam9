@@ -120,14 +120,13 @@
 
   var lastImg = "./assets/rexW.png";
 
+  var globalTime = 0;
+  var textTimeOuts = [];
 
   function movingSprite(c) {
     
     var imgWidth = 100;
     var imgHeight = 100;
-
-    // playerSprite.src = lastImg;
-
 
     if (keyD == true) {
       playerSprite.src = "./assets/rexD.png";
@@ -177,6 +176,10 @@
   function animationLoop(){
     var canvas = document.getElementById("evilCanvas");
     var c = canvas.getContext("2d");
+    c.shadowColor = "rgb(50, 50, 50)";
+    c.shadowOffsetX = 10;
+    c.shadowOffsetY = 10;
+    c.shadowBlur = 10;
     c.clearRect(0, 0, canvasWidth, canvasHeight);
     
     drawCart(c);
@@ -185,12 +188,18 @@
     movingSprite(c)
 
     if(overLap(offsetX, offsetY, 640, 360, 100, 100)){
-      
-      renderText(c, 'lmao')
+      textTimeOuts.push(globalTime + 100)
+      console.log('added');
+    }
+
+    for (let i = 0; i < textTimeOuts.length; i++) {
+      if (textTimeOuts[i] > globalTime){
+        renderText(c, 'lmao')
+      }
     }
     
+    globalTime += 1;
     window.requestAnimationFrame(animationLoop)
-
   }
 
   window.onload = () => {

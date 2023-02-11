@@ -126,9 +126,10 @@
     var canvas = document.getElementById("evilCanvas");
     var c = canvas.getContext("2d");
     c.clearRect(0, 0, canvasWidth, canvasHeight);
-
+    renderCake(c)
     movingSprite(c)
     renderText(c, 'lmao')
+    
     window.requestAnimationFrame(animationLoop)
 
   }

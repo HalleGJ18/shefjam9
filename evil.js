@@ -1,3 +1,5 @@
+// import "./player.js";
+
 (function() {
     var requestAnimationFrame = window.requestAnimationFrame || window.mozRequestAnimationFrame ||
       window.webkitRequestAnimationFrame || window.msRequestAnimationFrame;
@@ -48,9 +50,6 @@
   //neccessary variables
   var canvasWidth = 1280;
   var canvasHeight = 720;
-
-  var tickX = 50;
-  var tickY = 50;
   
   var keyW = false;
   var keyA = false;
@@ -64,11 +63,13 @@
 
   var stepSize = 10;
 
+  var playerRotation = 0
+
   function movingSprite() {
-    window.requestAnimationFrame(movingSprite);
+    // window.requestAnimationFrame(movingSprite);
 
     let playerSprite = new Image();
-    playerSprite.src = "./assets/alen.png"
+    playerSprite.src = "./assets/rex.png"
     
     var canvas = document.getElementById("evilCanvas");
     var c = canvas.getContext("2d");
@@ -77,7 +78,6 @@
     var imgHeight = 128;
 
     c.clearRect(0, 0, canvasWidth, canvasHeight);
-    c.drawImage(playerSprite, offsetX, offsetY, imgWidth, imgHeight);
 
     if (keyD == true) {
         if (offsetX + stepSize + imgWidth <= canvasWidth) {
@@ -112,14 +112,21 @@
         }
     
     }
-
+    c.drawImage(playerSprite, offsetX, offsetY, imgWidth, imgHeight);
   }
 
-//   window.requestAnimationFrame(drawStuff);
+  function animationLoop(){
+    var canvas = document.getElementById("evilCanvas");
+    var c = canvas.getContext("2d");
 
-  window.onload = () => {
     movingSprite()
 
-    
+    window.requestAnimationFrame(animationLoop)
+  }
+
+  window.onload = () => {
+
+
+    window.requestAnimationFrame(animationLoop)
   }
   

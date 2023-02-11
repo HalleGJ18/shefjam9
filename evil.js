@@ -128,7 +128,12 @@
     c.clearRect(0, 0, canvasWidth, canvasHeight);
     renderCake(c)
     movingSprite(c)
-    renderText(c, 'lmao')
+
+    if(CheckTableCollisions([640, 360, (640+128), (360+128)], offsetX, offsetY, 128)){
+      
+      renderText(c, 'lmao')
+    }
+    //console.log(CheckTableCollisions([640, 360, (640+128), (360+128)], offsetX, offsetY, 128));
     
     window.requestAnimationFrame(animationLoop)
 

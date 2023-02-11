@@ -44,29 +44,14 @@
         break;
     }
   }
-  
-
-  //utility variables
-  var canvasWidth = 1280;
-  var canvasHeight = 720;
-  
-  var keyW = false;
-  var keyA = false;
-  var keyS = false;
-  var keyD = false;
 
   // tables 
-
-  var tables = [];
-  var tableImgs = []
-  var tableSideLen = 100;
-
   function genTables(c){
     let level1 = [[30,30,tableSideLen,tableSideLen],
-                  [158,30,tableSideLen,tableSideLen],
+                  [130,30,tableSideLen,tableSideLen],
                   [300,490,tableSideLen,tableSideLen],
                   [870,450,tableSideLen,tableSideLen],
-                  [287,159,tableSideLen,tableSideLen],
+                  [300,190,tableSideLen,tableSideLen],
                   [1122,275,tableSideLen,tableSideLen],
                   [700,350,tableSideLen,tableSideLen],
                   [30,360,tableSideLen,tableSideLen],
@@ -108,13 +93,7 @@
   }
 
 
-  // player character
-
-  var offsetX = 500;
-  var offsetY = 300;
-
-  var stepSize = 7;
-
+  // player character movement
   let playerSprite = new Image();
   playerSprite.src = "./assets/rexW.png";
 
@@ -136,9 +115,6 @@
         if ((offsetX + stepSize + imgWidth <= canvasWidth) && (!(checkTableCollisions(offsetX+stepSize, offsetY, imgWidth)))) {
             offsetX += stepSize;
         }
-        // else {
-        //     offsetX = canvasWidth - imgWidth
-        // }
       }
     if (keyS == true) {
       playerSprite.src = "./assets/rexS.png";
@@ -146,9 +122,6 @@
         if ((offsetY + stepSize + imgHeight <= canvasHeight) && (!(checkTableCollisions(offsetX, offsetY+stepSize, imgHeight)))) {
             offsetY += stepSize;
         }
-        // else {
-        //     offsetY = canvasHeight - imgHeight
-        // }
     }
     if (keyA == true) {
       playerSprite.src = "./assets/rexA.png";
@@ -156,9 +129,6 @@
         if ((offsetX - stepSize >= 0) && (!(checkTableCollisions(offsetX-stepSize, offsetY, imgWidth)))) {
             offsetX -= stepSize;
         }
-        // else {
-        //     offsetX = 0
-        // }
     }
     if (keyW == true) {
       playerSprite.src = "./assets/rexW.png";
@@ -166,9 +136,6 @@
         if ((offsetY - stepSize >= 0) && (!(checkTableCollisions(offsetX, offsetY-stepSize, imgHeight)))) {
             offsetY -= stepSize;
         }
-        // else {
-        //     offsetY = 0
-        // }
     }
     c.drawImage(playerSprite, offsetX, offsetY, imgWidth, imgHeight);
   }
@@ -178,12 +145,17 @@
   function animationLoop(){
     var canvas = document.getElementById("evilCanvas");
     var c = canvas.getContext("2d");
+    
+    // shadow
     c.shadowColor = "rgb(50, 50, 50)";
     c.shadowOffsetX = 10;
     c.shadowOffsetY = 10;
     c.shadowBlur = 10;
+
+    // reset frame
     c.clearRect(0, 0, canvasWidth, canvasHeight);
     
+    // draw
     drawCart(c);
     genTables(c);
     renderCake(c)

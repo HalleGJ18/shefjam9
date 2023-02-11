@@ -22,14 +22,22 @@ const stepSize = 7;
 //player size
 var playerWidth = 100;
 
+//gameplay variables
+var bagSize = 4;
+var carriedCakes = 0;
+var score = 0;
+var streakTimer = 0;
+var streak = 0;
+
 // cake variables
 const cakeSize = tableSideLen/2;;
 var cakes = {};
 
 // cart variables
+var cartImgSide = 300;
 var cartPosX = 640-(cartImgSide/2);
 var cartPosY = 720-(cartImgSide/2);
-var cartImgSide = 300;
+
 
 // time variables
 var globalTime = 0;

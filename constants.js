@@ -21,7 +21,9 @@ const stepSize = 7;
 
 // cake variables
 const cakeSize = tableSideLen/2;;
-var cakes = [];
+var cakes = {};
+var num_of_cakes = 10;
+var cakeImgs = {};
 
 // time variables
 var globalTime = 0;

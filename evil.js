@@ -67,7 +67,8 @@
     
     // draw
     drawCart(c);
-    genTables(c);
+    drawTables(c);
+    drawCakes(c);
 
     renderCake(c);
     movingSprite(c);

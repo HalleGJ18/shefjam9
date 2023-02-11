@@ -66,6 +66,8 @@
 
   var lastImg = "./assets/rexW.png";
 
+  var globalTime = 0;
+  var textTimeOuts = [];
 
   function movingSprite(c) {
     // window.requestAnimationFrame(movingSprite);
@@ -128,13 +130,19 @@
     movingSprite(c)
 
     if(overLap(offsetX, 640, offsetY, 360, 100, 100)){
-      
-      renderText(c, 'lmao')
+      textTimeOuts.push(globalTime + 100)
+      console.log('added');
+    }
+
+    for (let i = 0; i < textTimeOuts.length; i++) {
+      if (textTimeOuts[i] > globalTime){
+        renderText(c, 'lmao')
+      }
     }
     //console.log(CheckTableCollisions([640, 360, (640+128), (360+128)], offsetX, offsetY, 128));
     
+    globalTime += 1;
     window.requestAnimationFrame(animationLoop)
-
   }
 
   window.onload = () => {

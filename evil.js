@@ -1,5 +1,3 @@
-// import "./player.js";
-
 (function() {
     var requestAnimationFrame = window.requestAnimationFrame || window.mozRequestAnimationFrame ||
       window.webkitRequestAnimationFrame || window.msRequestAnimationFrame;
@@ -63,13 +61,14 @@
 
   var stepSize = 10;
 
-  var playerRotation = 0
+  let playerSprite = new Image();
+  playerSprite.src = "./assets/rexW.png";
+
+  var lastImg = "./assets/rexW.png";
 
   function movingSprite() {
-    // window.requestAnimationFrame(movingSprite);
 
     let playerSprite = new Image();
-    playerSprite.src = "./assets/rex.png"
     
     var canvas = document.getElementById("evilCanvas");
     var c = canvas.getContext("2d");
@@ -79,7 +78,11 @@
 
     c.clearRect(0, 0, canvasWidth, canvasHeight);
 
+    playerSprite.src = lastImg;
+
     if (keyD == true) {
+      playerSprite.src = "./assets/rexD.png";
+      lastImg = "./assets/rexD.png";
         if (offsetX + stepSize + imgWidth <= canvasWidth) {
             offsetX += stepSize;
         }
@@ -88,6 +91,8 @@
         }
       }
     if (keyS == true) {
+      playerSprite.src = "./assets/rexS.png";
+      lastImg = "./assets/rexS.png";
         if (offsetY + stepSize + imgHeight <= canvasHeight) {
             offsetY += stepSize;
         }
@@ -96,6 +101,8 @@
         }
     }
     if (keyA == true) {
+      playerSprite.src = "./assets/rexA.png";
+      lastImg = "./assets/rexA.png";
         if (offsetX - stepSize >= 0) {
             offsetX -= stepSize;
         }
@@ -104,17 +111,19 @@
         }
     }
     if (keyW == true) {
+      playerSprite.src = "./assets/rexW.png";
+      lastImg = "./assets/rexW.png";
         if (offsetY - stepSize >= 0) {
             offsetY -= stepSize;
         }
         else {
             offsetY = 0
         }
-    
     }
     c.drawImage(playerSprite, offsetX, offsetY, imgWidth, imgHeight);
   }
 
+  // animation loop
   function animationLoop(){
     var canvas = document.getElementById("evilCanvas");
     var c = canvas.getContext("2d");
@@ -125,8 +134,6 @@
   }
 
   window.onload = () => {
-
-
     window.requestAnimationFrame(animationLoop)
   }
   

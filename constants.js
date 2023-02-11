@@ -7,6 +7,7 @@ var keyW = false;
 var keyA = false;
 var keyS = false;
 var keyD = false;
+var spaceBar = false;
 
 // table variables
 var tables = [];

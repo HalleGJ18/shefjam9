@@ -59,3 +59,14 @@ function CheckCartDistance(cartCornerX,cartCornerY,cartImgWidth,playerCornerX,pl
 function PickUpCake(){
   return null;
 }
+
+function interactAction(spaceBar, cakes, playerX, playerY, playerWidth, cartX, cartY, cartImgWidth) {
+  if (spaceBar){
+    let nearestCake = GetNearestCake(cakes,playerX,playerY,playerWidth);
+    let deposit = CheckCartDistance(cartX,cartY,cartImgWidth,playerX,playerY,playerWidth);
+    console.log("Interaction!");
+    //pick up nearest cake if nearestCake !== null
+    //deposit cakes at cart if deposit == true
+    spaceBar = false;
+  }
+}

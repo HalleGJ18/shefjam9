@@ -8,11 +8,3 @@ function renderText(c, text) {
   c.fillStyle = gradient;
   c.fillText(text, 700, 340);
 }
-
-function renderCake(c){
-  let cakeSprite = new Image();
-  cakeSprite.src = "./assets/cake1.png"
-
-  c.drawImage(cakeSprite, 700, 350, 50, 50);
-
-}

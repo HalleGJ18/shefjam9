@@ -40,7 +40,6 @@ var cartImgSide = 300;
 var cartPosX = 640-(cartImgSide/2);
 var cartPosY = 720-(cartImgSide/2);
 
-
 // time variables
 var globalTime = 0;
 var textTimeOuts = [];

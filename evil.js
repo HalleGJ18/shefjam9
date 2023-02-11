@@ -110,7 +110,7 @@
     var imgWidth = 100;
     var imgHeight = 100;
 
-    playerSprite.src = lastImg;
+    // playerSprite.src = lastImg;
 
     if (keyD == true) {
       playerSprite.src = "./assets/rexD.png";

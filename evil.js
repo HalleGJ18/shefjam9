@@ -98,12 +98,13 @@
   var offsetX = 10;
   var offsetY = 10;
 
-  var stepSize = 10;
+  var stepSize = 6;
 
   let playerSprite = new Image();
   playerSprite.src = "./assets/rexW.png";
 
   var lastImg = "./assets/rexW.png";
+
 
   function movingSprite(c) {
     
@@ -111,6 +112,7 @@
     var imgHeight = 100;
 
     // playerSprite.src = lastImg;
+
 
     if (keyD == true) {
       playerSprite.src = "./assets/rexD.png";
@@ -160,16 +162,20 @@
   function animationLoop(){
     var canvas = document.getElementById("evilCanvas");
     var c = canvas.getContext("2d");
-
     c.clearRect(0, 0, canvasWidth, canvasHeight);
-
+    
     drawCart(c);
-
     genTables(c);
+    renderCake(c)
+    movingSprite(c)
 
-    movingSprite(c);
+    if(overLap(offsetX, 640, offsetY, 360, 100, 100)){
+      
+      renderText(c, 'lmao')
+    }
+    
+    window.requestAnimationFrame(animationLoop)
 
-    window.requestAnimationFrame(animationLoop);
   }
 
   window.onload = () => {

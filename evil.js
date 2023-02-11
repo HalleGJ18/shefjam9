@@ -98,7 +98,7 @@
   var offsetX = 10;
   var offsetY = 10;
 
-  var stepSize = 6;
+  var stepSize = 7;
 
   let playerSprite = new Image();
   playerSprite.src = "./assets/rexW.png";

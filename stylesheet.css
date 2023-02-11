@@ -38,13 +38,25 @@ body {
     font-size: 15px;
 }
 
-#score {
+#scores {
     font-family: 'Courier New', monospace;
     color: white;
     font-size: 13px;
 }
 
-#carrying {
+#scoren {
+    font-family: 'Courier New', monospace;
+    color: green;
+    font-size: 13px;
+}
+
+#carryingn {
+    font-family: 'Courier New', monospace;
+    color: red;
+    font-size: 13px;
+}
+
+#carryings {
     font-family: 'Courier New', monospace;
     color: white;
     font-size: 13px;

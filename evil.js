@@ -59,7 +59,7 @@
 
   var tables = [];
   var tableImgs = []
-  var tableSideLen = 128;
+  var tableSideLen = 100;
 
   function genTables(c){
     let level1 = [[30,30,tableSideLen,tableSideLen],
@@ -122,6 +122,8 @@
 
   var globalTime = 0;
   var textTimeOuts = [];
+
+  var cakeSize = tableSideLen/2;
 
   function movingSprite(c) {
     
@@ -186,8 +188,8 @@
     genTables(c);
     renderCake(c)
     movingSprite(c)
-
-    if(overLap(offsetX, offsetY, 640, 360, 100, 100)){
+    //overlap last 2 w is sprite, cake
+    if(overLap(offsetX, offsetY, 690, 340, tableSideLen, cakeSize)){
       textTimeOuts.push(globalTime + 100)
       console.log('added');
     }

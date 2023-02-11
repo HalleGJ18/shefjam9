@@ -59,7 +59,7 @@
   var offsetX = 10;
   var offsetY = 10;
 
-  var stepSize = 10;
+  var stepSize = 6;
 
   let playerSprite = new Image();
   playerSprite.src = "./assets/rexW.png";
@@ -73,8 +73,8 @@
     var canvas = document.getElementById("evilCanvas");
     var c = canvas.getContext("2d");
     
-    var imgWidth = 128;
-    var imgHeight = 128;
+    var imgWidth = 100;
+    var imgHeight = 100;
 
     c.clearRect(0, 0, canvasWidth, canvasHeight);
 

@@ -1,4 +1,4 @@
-// import "./player.js";
+// import playerSprite from "./player.js";
 
 (function() {
     var requestAnimationFrame = window.requestAnimationFrame || window.mozRequestAnimationFrame ||
@@ -65,61 +65,67 @@
 
   var playerRotation = 0
 
-  function movingSprite() {
-    // window.requestAnimationFrame(movingSprite);
+  // function movingSprite() {
+  //   // window.requestAnimationFrame(movingSprite);
 
-    let playerSprite = new Image();
-    playerSprite.src = "./assets/rex.png"
+  //   let playerSprite = new Image();
+  //   playerSprite.src = "./assets/rex.png"
     
-    var canvas = document.getElementById("evilCanvas");
-    var c = canvas.getContext("2d");
+  //   var canvas = document.getElementById("evilCanvas");
+  //   var c = canvas.getContext("2d");
     
-    var imgWidth = 128;
-    var imgHeight = 128;
+  //   var imgWidth = 128;
+  //   var imgHeight = 128;
 
-    c.clearRect(0, 0, canvasWidth, canvasHeight);
+  //   c.clearRect(0, 0, canvasWidth, canvasHeight);
 
-    if (keyD == true) {
-        if (offsetX + stepSize + imgWidth <= canvasWidth) {
-            offsetX += stepSize;
-        }
-        else {
-            offsetX = canvasWidth - imgWidth
-        }
-      }
-    if (keyS == true) {
-        if (offsetY + stepSize + imgHeight <= canvasHeight) {
-            offsetY += stepSize;
-        }
-        else {
-            offsetY = canvasHeight - imgHeight
-        }
-    }
-    if (keyA == true) {
-        if (offsetX - stepSize >= 0) {
-            offsetX -= stepSize;
-        }
-        else {
-            offsetX = 0
-        }
-    }
-    if (keyW == true) {
-        if (offsetY - stepSize >= 0) {
-            offsetY -= stepSize;
-        }
-        else {
-            offsetY = 0
-        }
+  //   if (keyD == true) {
+  //       if (offsetX + stepSize + imgWidth <= canvasWidth) {
+  //           offsetX += stepSize;
+  //       }
+  //       else {
+  //           offsetX = canvasWidth - imgWidth
+  //       }
+  //     }
+  //   if (keyS == true) {
+  //       if (offsetY + stepSize + imgHeight <= canvasHeight) {
+  //           offsetY += stepSize;
+  //       }
+  //       else {
+  //           offsetY = canvasHeight - imgHeight
+  //       }
+  //   }
+  //   if (keyA == true) {
+  //       if (offsetX - stepSize >= 0) {
+  //           offsetX -= stepSize;
+  //       }
+  //       else {
+  //           offsetX = 0
+  //       }
+  //   }
+  //   if (keyW == true) {
+  //       if (offsetY - stepSize >= 0) {
+  //           offsetY -= stepSize;
+  //       }
+  //       else {
+  //           offsetY = 0
+  //       }
     
-    }
-    c.drawImage(playerSprite, offsetX, offsetY, imgWidth, imgHeight);
-  }
+  //   }
+  //   c.drawImage(playerSprite, offsetX, offsetY, imgWidth, imgHeight);
+  // }
+
+  var playerSprite = new PlayerSprite(); 
 
   function animationLoop(){
     var canvas = document.getElementById("evilCanvas");
     var c = canvas.getContext("2d");
 
-    movingSprite()
+    c.clearRect(0, 0, canvasWidth, canvasHeight);
+
+    playerSprite.moveSprite(c)
+
+    // movingSprite()
 
     window.requestAnimationFrame(animationLoop)
   }

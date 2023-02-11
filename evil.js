@@ -1,5 +1,5 @@
 // import "./player.js";
-
+console.log(CheckCollides(10,10,50,50,70,30,20));
 (function() {
     var requestAnimationFrame = window.requestAnimationFrame || window.mozRequestAnimationFrame ||
       window.webkitRequestAnimationFrame || window.msRequestAnimationFrame;

@@ -12,10 +12,8 @@ function CheckCollides(boxTopX,boxTopY,boxBottomX,boxBottomY,playerX,playerY,pla
   //combine with
   //top side collision
   //bottom side collision
-  if(((boxTopX<(centreX+collisionDist) | 
-  (boxBottomX>(centreX-collisionDist))) && 
-  (((boxTopY<(centreY+collisionDist)) | 
-  (boxBottomY>(centreY-collisionDist)))))){
+  if((((boxTopX<(centreX+collisionDist)) | (boxBottomX>(centreX-collisionDist))) && 
+  ((boxTopY<(centreY+collisionDist)) | (boxBottomY>(centreY-collisionDist))))){
     return true;
   }
   else{

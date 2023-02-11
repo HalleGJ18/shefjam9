@@ -66,19 +66,15 @@
 
   var lastImg = "./assets/rexW.png";
 
-  function movingSprite() {
 
-    let playerSprite = new Image();
+  function movingSprite(c) {
+    // window.requestAnimationFrame(movingSprite);
     
     var canvas = document.getElementById("evilCanvas");
     var c = canvas.getContext("2d");
     
     var imgWidth = 100;
     var imgHeight = 100;
-
-    c.clearRect(0, 0, canvasWidth, canvasHeight);
-
-    playerSprite.src = lastImg;
 
     if (keyD == true) {
       playerSprite.src = "./assets/rexD.png";
@@ -127,10 +123,18 @@
   function animationLoop(){
     var canvas = document.getElementById("evilCanvas");
     var c = canvas.getContext("2d");
+    c.clearRect(0, 0, canvasWidth, canvasHeight);
+    renderCake(c)
+    movingSprite(c)
 
-    movingSprite()
-
+    if(overLap(offsetX, 640, offsetY, 360, 100, 100)){
+      
+      renderText(c, 'lmao')
+    }
+    //console.log(CheckTableCollisions([640, 360, (640+128), (360+128)], offsetX, offsetY, 128));
+    
     window.requestAnimationFrame(animationLoop)
+
   }
 
   window.onload = () => {

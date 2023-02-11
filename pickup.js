@@ -56,8 +56,25 @@ function CheckCartDistance(cartCornerX,cartCornerY,cartImgWidth,playerCornerX,pl
   }
 }
 
-function PickUpCake(){
-  return null;
+//pick up cake with given index
+//then render will no longer draw it, and can't be picked up again
+//check bag capacity
+function PickUpCake(cakes,cakeNumber){
+  //remove cake from dictionary of all cakes
+  //if space in evil bag for cake
+  if (carriedCakes < bagSize){
+    delete cakes[cakeNumber];
+    carriedCakes += 1;
+  }
+  return cakes;
+}
+
+//deposit cakes given lex is next to the cart
+function deposit(carriedCakes){
+  //update score
+  score += carriedCakes;
+  //empty bag storage
+  carriedCakes = 0;
 }
 
 function interactAction(spaceBar, cakes, playerX, playerY, playerWidth, cartX, cartY, cartImgWidth) {

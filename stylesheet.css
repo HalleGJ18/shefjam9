@@ -31,3 +31,21 @@ body {
 .intro {
     background: #fbf8e7;
 }
+
+#stats {
+    font-family: 'Courier New', monospace;
+    color: white;
+    font-size: 30px;
+}
+
+#score {
+    font-family: 'Courier New', monospace;
+    color: white;
+    font-size: 20px;
+}
+
+#carrying {
+    font-family: 'Courier New', monospace;
+    color: white;
+    font-size: 20px;
+}

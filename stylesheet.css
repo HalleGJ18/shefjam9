@@ -21,3 +21,13 @@ img {
     bottom:0;
     margin:auto;
   }
+
+body {
+    margin: 0;
+    background: #282c34;
+    overflow: hidden;
+}
+
+.intro {
+    background: #fefde8;
+}

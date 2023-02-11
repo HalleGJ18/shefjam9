@@ -26,8 +26,7 @@ function genTables(){
     let hit = false;
     for (let t in tables) {
       hit = overLap(tables[t][0], tables[t][1], playerX, playerY, tableSideLen, playerSide);
-      if (hit){break;}
-      
+      if (hit){break;} 
     }
     return hit;
   }

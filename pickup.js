@@ -84,17 +84,15 @@ function interactAction(spaceBar, cakes, playerX, playerY, playerWidth, cartX, c
     //pick up nearest cake if nearestCake !== null
     if (nearestCake !== null){
       cakes = PickUpCake(cakes, nearestCake);
-      console.log("picked up a cake!");
-      console.log(carriedCakes);
+      document.getElementById('carrying').innerHTML = "Carried Cakes: " + carriedCakes;
     }
 
     let deposit = CheckCartDistance(cartX,cartY,cartImgWidth,playerX,playerY,playerWidth);
     //deposit cakes at cart if deposit == true
     if (deposit && (carriedCakes>0)){
       carriedCakes = DepositCakes(carriedCakes);
-      console.log("Deposited Cakes");
-      console.log("Score: " + score);
-      console.log("Carried cakes: " +carriedCakes);
+      document.getElementById('score').innerHTML = "Score: " + score;
+      document.getElementById('carrying').innerHTML = "Carried Cakes: 0 " ;
     }
     spaceBar = false;
   }

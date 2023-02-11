@@ -75,7 +75,7 @@
     
     //method signature/params may need to be edited once cake pickup is done
     //so cakes can stop being rendered, and score can be updated on deposit
-    //interactAction(spaceBar,cakes,offsetX,offsetY,playerWidth,cartPosX,cartPosY,cartImgSide);
+    interactAction(spaceBar,cakes,offsetX,offsetY,playerWidth,cartPosX,cartPosY,cartImgSide);
 
     //overlap last 2 w is sprite, cake
     if(overLap(offsetX, offsetY, 690, 340, tableSideLen, cakeSize)){

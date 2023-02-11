@@ -23,6 +23,9 @@
       case 87: //w
         keyW = true;
         break;
+      case 32: //spacebar
+        spaceBar = true;
+        break;
     }
   }
   
@@ -41,6 +44,9 @@
         break;
       case 87: //w
         keyW = false;
+        break;
+      case 32: //spacebar
+        spaceBar = false;
         break;
     }
   }
@@ -62,8 +68,14 @@
     // draw
     drawCart(c);
     genTables(c);
-    renderCake(c)
-    movingSprite(c)
+
+    renderCake(c);
+    movingSprite(c);
+    
+    //method signature/params may need to be edited once cake pickup is done
+    //so cakes can stop being rendered, and score can be updated on deposit
+    //interactAction(spaceBar,cakes,offsetX,offsetY,playerWidth,cartPosX,cartPosY,cartImgSide);
+
     //overlap last 2 w is sprite, cake
     if(overLap(offsetX, offsetY, 690, 340, tableSideLen, cakeSize)){
       textTimeOuts.push(globalTime + 100)

@@ -67,7 +67,8 @@
   var lastImg = "./assets/rexW.png";
 
 
-  function movingSprite() {
+  function movingSprite(c) {
+    // window.requestAnimationFrame(movingSprite);
 
     let playerSprite = new Image();
     
@@ -76,10 +77,6 @@
     
     var imgWidth = 100;
     var imgHeight = 100;
-
-    c.clearRect(0, 0, canvasWidth, canvasHeight);
-
-    playerSprite.src = lastImg;
 
     if (keyD == true) {
       playerSprite.src = "./assets/rexD.png";
@@ -128,6 +125,12 @@
   function animationLoop(){
     var canvas = document.getElementById("evilCanvas");
     var c = canvas.getContext("2d");
+    c.clearRect(0, 0, canvasWidth, canvasHeight);
+
+    movingSprite(c)
+    renderText(c, 'lmao')
+    window.requestAnimationFrame(animationLoop)
+
   }
 
   window.onload = () => {

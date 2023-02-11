@@ -50,22 +50,6 @@
         break;
     }
   }
-<<<<<<< HEAD
-  
-
-  //utility variables
-  var canvasWidth = 1280;
-  var canvasHeight = 720;
-
-  var playerWidth = 100;
-  
-  var keyW = false;
-  var keyA = false;
-  var keyS = false;
-  var keyD = false;
-  var spaceBar = false;
-=======
->>>>>>> b26e0dfb01104f1726d22f91efcf8e0391743e82
 
   // tables 
   function genTables(c){

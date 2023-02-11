@@ -63,6 +63,15 @@ function PickUpCake(){
 function interactAction(spaceBar, cakes, playerX, playerY, playerWidth, cartX, cartY, cartImgWidth) {
   if (spaceBar){
     let nearestCake = GetNearestCake(cakes,playerX,playerY,playerWidth);
+    //pick up nearest cake if nearestCake !== null
+    if (nearestCake !== null){
+      cakes = PickUpCake(cakes, nearestCake);
+      textTimeOuts.push([globalTime + 100, nearestCake]);
+
+      console.log("picked up a cake!");
+      console.log(carriedCakes);
+    }
+
     let deposit = CheckCartDistance(cartX,cartY,cartImgWidth,playerX,playerY,playerWidth);
     console.log("Interaction!");
     //pick up nearest cake if nearestCake !== null

@@ -77,17 +77,8 @@
     //so cakes can stop being rendered, and score can be updated on deposit
     //interactAction(spaceBar,cakes,offsetX,offsetY,playerWidth,cartPosX,cartPosY,cartImgSide);
 
-    //overlap last 2 w is sprite, cake
-    if(overLap(offsetX, offsetY, 690, 340, tableSideLen, cakeSize)){
-      textTimeOuts.push(globalTime + 100)
-      // console.log('added');
-    }
-
-    for (let i = 0; i < textTimeOuts.length; i++) {
-      if (textTimeOuts[i] > globalTime){
-        renderText(c, 'lmao')
-      }
-    }
+    // renders the texts
+    renderPickUpText(c);
     
     globalTime += 1;
     window.requestAnimationFrame(animationLoop)

@@ -1,8 +1,5 @@
 const text = [
-
-
 ]
-
 function renderText(c, text) {
   c.font = "bold 36px sans-serif";
   c.shadowColor = "rgb(190, 190, 190)";

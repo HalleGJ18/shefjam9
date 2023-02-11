@@ -45,7 +45,8 @@
     }
   }
   
-  //neccessary variables
+
+  //utility variables
   var canvasWidth = 1280;
   var canvasHeight = 720;
   
@@ -53,6 +54,26 @@
   var keyA = false;
   var keyS = false;
   var keyD = false;
+
+  // tables 
+
+  var tables = [];
+  var tableImgs = []
+  var tableSideLen = 128;
+
+  function genTables(c){
+    let level1 = [[10,10,10+tableSideLen,10+tableSideLen],
+                  []]
+
+    tables = level1;
+
+    for (let i = 0; i < tables.length; i++) {
+      tableImgs[i] = new Image();
+      tableImgs[i].src = "./assets/table.png"
+      c.drawImage(tableImgs[i],level1[i][0],level1[i][1],level1[i][2], level1[i][3])
+    }
+  }
+
 
   // player character
 
@@ -66,17 +87,17 @@
 
   var lastImg = "./assets/rexW.png";
 
-  function movingSprite() {
+  function movingSprite(c) {
 
     let playerSprite = new Image();
     
-    var canvas = document.getElementById("evilCanvas");
-    var c = canvas.getContext("2d");
+    // var canvas = document.getElementById("evilCanvas");
+    // var c = canvas.getContext("2d");
     
-    var imgWidth = 128;
-    var imgHeight = 128;
+    var imgWidth = 100;
+    var imgHeight = 100;
 
-    c.clearRect(0, 0, canvasWidth, canvasHeight);
+    // c.clearRect(0, 0, canvasWidth, canvasHeight); 
 
     playerSprite.src = lastImg;
 
@@ -123,17 +144,22 @@
     c.drawImage(playerSprite, offsetX, offsetY, imgWidth, imgHeight);
   }
 
+
   // animation loop
   function animationLoop(){
     var canvas = document.getElementById("evilCanvas");
     var c = canvas.getContext("2d");
 
-    movingSprite()
+    c.clearRect(0, 0, canvasWidth, canvasHeight);
 
-    window.requestAnimationFrame(animationLoop)
+    genTables(c);
+
+    movingSprite(c);
+
+    window.requestAnimationFrame(animationLoop);
   }
 
   window.onload = () => {
-    window.requestAnimationFrame(animationLoop)
+    window.requestAnimationFrame(animationLoop);
   }
   

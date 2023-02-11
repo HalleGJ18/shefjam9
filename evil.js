@@ -119,19 +119,11 @@
         else {
             offsetY = 0
         }
-    
     }
-
-    if (keyW == keyA == keyS == keyD == false) {
-      console.log(lastImg);
-      playerSprite.src = lastImg;
-    }
-
     c.drawImage(playerSprite, offsetX, offsetY, imgWidth, imgHeight);
   }
 
   // animation loop
-
   function animationLoop(){
     var canvas = document.getElementById("evilCanvas");
     var c = canvas.getContext("2d");
@@ -142,8 +134,6 @@
   }
 
   window.onload = () => {
-
-
     window.requestAnimationFrame(animationLoop)
   }
   

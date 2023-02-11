@@ -3,14 +3,10 @@ const text = [
 
 ]
 
-function renderText(c, text) {
-  c.fillText(text, 100, 100);
-}
+function renderText() {
+  window.requestAnimationFrame(renderText);
+  var canvas = document.getElementById("evilCanvas");
+  var c = canvas.getContext("2d");
 
-function renderCake(c){
-  let cakeSprite = new Image();
-  cakeSprite.src = "./assets/cake1.png"
-
-  c.drawImage(cakeSprite, 640, 360, 128, 128);
-
+  c.fillText("Hello world", 100, 100);
 }

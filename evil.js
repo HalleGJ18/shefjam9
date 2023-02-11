@@ -168,7 +168,7 @@
 
     for (let i = 0; i < textTimeOuts.length; i++) {
       if (textTimeOuts[i] > globalTime){
-        renderText(c, 'lmao')
+        renderText(c, tables[6][0], tables[6][1] )
       }
     }
     

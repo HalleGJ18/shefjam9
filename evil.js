@@ -129,7 +129,7 @@
     renderCake(c)
     movingSprite(c)
 
-    if(CheckTableCollisions([640, 360, (640+128), (360+128)], offsetX, offsetY, 128)){
+    if(overLap(offsetX, 640, offsetY, 360, 100, 100)){
       
       renderText(c, 'lmao')
     }

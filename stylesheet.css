@@ -1,6 +1,7 @@
 #evilCanvas {
-    border:1px solid #FFFFFF; 
+    
     background-color: #FFFFFF; 
+    background-image: url('./assets/floor.png');
 
     padding: 0;
     margin: auto;

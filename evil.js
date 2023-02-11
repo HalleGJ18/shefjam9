@@ -23,6 +23,9 @@
       case 87: //w
         keyW = true;
         break;
+      case 32: //spacebar
+        spaceBar = true;
+        break;
     }
   }
   
@@ -42,6 +45,9 @@
       case 87: //w
         keyW = false;
         break;
+      case 32: //spacebar
+        spaceBar = false;
+        break;
     }
   }
   
@@ -49,11 +55,14 @@
   //utility variables
   var canvasWidth = 1280;
   var canvasHeight = 720;
+
+  var playerWidth = 100;
   
   var keyW = false;
   var keyA = false;
   var keyS = false;
   var keyD = false;
+  var spaceBar = false;
 
   // tables 
 
@@ -83,14 +92,19 @@
 
 
   // cart
-
+  var cartImgSide = 300;
+  var cartPosX = 640-(cartImgSide/2);
+  var cartPosY = 720-(cartImgSide/2);
+  
   function drawCart(c){
-    var cartPos = [640-150, 720-150];
-    var cartImgSide = 300;
     let cartImg = new Image();
     cartImg.src = "./assets/cart.png";
-    c.drawImage(cartImg,cartPos[0],cartPos[1],cartImgSide,cartImgSide);
+    c.drawImage(cartImg,cartPosX,cartPosY,cartImgSide,cartImgSide);
   }
+
+  //cakes
+  //TODO: POPULATE THIS WITH ACTUAL CAKE POSITIONS
+  var cakes = {0:[10,10]};
 
 
   // player character
@@ -108,8 +122,8 @@
 
   function movingSprite(c) {
     
-    var imgWidth = 100;
-    var imgHeight = 100;
+    var imgWidth = playerWidth;
+    var imgHeight = playerWidth;
 
     // playerSprite.src = lastImg;
 
@@ -157,6 +171,17 @@
     c.drawImage(playerSprite, offsetX, offsetY, imgWidth, imgHeight);
   }
 
+  function interactAction(spaceBar, cakes, playerX, playerY, playerWidth, cartX, cartY, cartImgWidth) {
+    if (spaceBar){
+      let nearestCake = GetNearestCake(cakes,playerX,playerY,playerWidth);
+      let deposit = CheckCartDistance(cartX,cartY,cartImgWidth,playerX,playerY,playerWidth);
+      console.log("Interaction!");
+      //pick up nearest cake if nearestCake !== null
+      //deposit cakes at cart if deposit == true
+      spaceBar = false;
+    }
+  }
+
 
   // animation loop
   function animationLoop(){
@@ -166,8 +191,11 @@
     
     drawCart(c);
     genTables(c);
-    renderCake(c)
-    movingSprite(c)
+    renderCake(c);
+    movingSprite(c);
+    //method signature/params may need to be edited once cake pickup is done
+    //so cakes can stop being rendered, and score can be updated on deposit
+    interactAction(spaceBar,cakes,offsetX,offsetY,playerWidth,cartPosX,cartPosY,cartImgSide);
 
     if(overLap(offsetX, 640, offsetY, 360, 100, 100)){
       

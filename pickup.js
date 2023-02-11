@@ -55,3 +55,7 @@ function CheckCartDistance(cartCornerX,cartCornerY,cartImgWidth,playerCornerX,pl
     return false;
   }
 }
+
+function PickUpCake(){
+  return null;
+}

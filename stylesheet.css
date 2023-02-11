@@ -35,17 +35,17 @@ body {
 #stats {
     font-family: 'Courier New', monospace;
     color: white;
-    font-size: 30px;
+    font-size: 15px;
 }
 
 #score {
     font-family: 'Courier New', monospace;
     color: white;
-    font-size: 20px;
+    font-size: 13px;
 }
 
 #carrying {
     font-family: 'Courier New', monospace;
     color: white;
-    font-size: 20px;
+    font-size: 13px;
 }

@@ -1,5 +1,3 @@
-// import "./player.js";
-
 (function() {
     var requestAnimationFrame = window.requestAnimationFrame || window.mozRequestAnimationFrame ||
       window.webkitRequestAnimationFrame || window.msRequestAnimationFrame;
@@ -62,8 +60,6 @@
   var offsetY = 10;
 
   var stepSize = 10;
-
-  var playerRotation = 0
 
   let playerSprite = new Image();
   playerSprite.src = "./assets/rexW.png";
@@ -133,6 +129,8 @@
 
     c.drawImage(playerSprite, offsetX, offsetY, imgWidth, imgHeight);
   }
+
+  // animation loop
 
   function animationLoop(){
     var canvas = document.getElementById("evilCanvas");

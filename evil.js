@@ -66,6 +66,7 @@
 
   var lastImg = "./assets/rexW.png";
 
+
   function movingSprite() {
 
     let playerSprite = new Image();
@@ -127,10 +128,6 @@
   function animationLoop(){
     var canvas = document.getElementById("evilCanvas");
     var c = canvas.getContext("2d");
-
-    movingSprite()
-
-    window.requestAnimationFrame(animationLoop)
   }
 
   window.onload = () => {

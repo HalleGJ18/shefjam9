@@ -4,11 +4,6 @@ playerSprite.src = "./assets/rexW.png";
 
 var lastImg = "./assets/rexW.png";
 
-var globalTime = 0;
-var textTimeOuts = [];
-
-var cakeSize = tableSideLen/2;
-
 function movingSprite(c) {
   
   var imgWidth = 100;

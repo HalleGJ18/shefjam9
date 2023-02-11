@@ -72,14 +72,29 @@
                   [30,360,tableSideLen,tableSideLen],
                   [700,30,tableSideLen,tableSideLen]]
 
+    // level selection
     tables = level1;
 
     for (let i = 0; i < tables.length; i++) {
       tableImgs[i] = new Image();
       tableImgs[i].src = "./assets/table.png"
-      c.drawImage(tableImgs[i],level1[i][0],level1[i][1],level1[i][2], level1[i][3])
+      c.drawImage(tableImgs[i],tables[i][0],tables[i][1],tables[i][2], tables[i][3])
     }
   }
+
+  function checkTableCollisions(playerX, playerY, playerSide){
+    let hit = false;
+    for (let t in tables) {
+      hit = overLap(tables[t][0], tables[t][1], playerX, playerY, tableSideLen, playerSide);
+      if (hit){break;}
+      
+    }
+    return hit;
+  }
+
+
+  // cakes
+  
 
 
   // cart
@@ -95,8 +110,8 @@
 
   // player character
 
-  var offsetX = 10;
-  var offsetY = 10;
+  var offsetX = 500;
+  var offsetY = 300;
 
   var stepSize = 7;
 
@@ -117,42 +132,42 @@
     if (keyD == true) {
       playerSprite.src = "./assets/rexD.png";
       lastImg = "./assets/rexD.png";
-        if (offsetX + stepSize + imgWidth <= canvasWidth) {
+        if ((offsetX + stepSize + imgWidth <= canvasWidth) && (!(checkTableCollisions(offsetX+stepSize, offsetY, imgWidth)))) {
             offsetX += stepSize;
         }
-        else {
-            offsetX = canvasWidth - imgWidth
-        }
+        // else {
+        //     offsetX = canvasWidth - imgWidth
+        // }
       }
     if (keyS == true) {
       playerSprite.src = "./assets/rexS.png";
       lastImg = "./assets/rexS.png";
-        if (offsetY + stepSize + imgHeight <= canvasHeight) {
+        if ((offsetY + stepSize + imgHeight <= canvasHeight) && (!(checkTableCollisions(offsetX, offsetY+stepSize, imgHeight)))) {
             offsetY += stepSize;
         }
-        else {
-            offsetY = canvasHeight - imgHeight
-        }
+        // else {
+        //     offsetY = canvasHeight - imgHeight
+        // }
     }
     if (keyA == true) {
       playerSprite.src = "./assets/rexA.png";
       lastImg = "./assets/rexA.png";
-        if (offsetX - stepSize >= 0) {
+        if ((offsetX - stepSize >= 0) && (!(checkTableCollisions(offsetX-stepSize, offsetY, imgWidth)))) {
             offsetX -= stepSize;
         }
-        else {
-            offsetX = 0
-        }
+        // else {
+        //     offsetX = 0
+        // }
     }
     if (keyW == true) {
       playerSprite.src = "./assets/rexW.png";
       lastImg = "./assets/rexW.png";
-        if (offsetY - stepSize >= 0) {
+        if ((offsetY - stepSize >= 0) && (!(checkTableCollisions(offsetX, offsetY-stepSize, imgHeight)))) {
             offsetY -= stepSize;
         }
-        else {
-            offsetY = 0
-        }
+        // else {
+        //     offsetY = 0
+        // }
     }
     c.drawImage(playerSprite, offsetX, offsetY, imgWidth, imgHeight);
   }
@@ -169,7 +184,7 @@
     renderCake(c)
     movingSprite(c)
 
-    if(overLap(offsetX, 640, offsetY, 360, 100, 100)){
+    if(overLap(offsetX, offsetY, 640, 360, 100, 100)){
       
       renderText(c, 'lmao')
     }

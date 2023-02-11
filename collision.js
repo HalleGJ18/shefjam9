@@ -46,21 +46,21 @@
   
   //check collision with all tables
   //pass in list of table coords (top left, bottom right), and player position and width
-  function CheckTableCollisions(tableCoords, playerX, playerY, playerWidth) {
-    //return true if collision occurs
-    collides = false;
-    //iterate through each table collision box
-    for ([boxTopX,boxTopY,boxBottomX,boxBottomY] in tableCoords){
-      //check collision with player and obstacle
-      if (CheckCollides(boxTopX,boxTopY,boxBottomX,boxBottomY,playerX,playerY,playerWidth)){
-        collides = true;
-      }
-    } 
-    return collides;
-  }
+  // function CheckTableCollisions(tableCoords, playerX, playerY, playerWidth) {
+  //   //return true if collision occurs
+  //   collides = false;
+  //   //iterate through each table collision box
+  //   for ([boxTopX,boxTopY,boxBottomX,boxBottomY] in tableCoords){
+  //     //check collision with player and obstacle
+  //     if (CheckCollides(boxTopX,boxTopY,boxBottomX,boxBottomY,playerX,playerY,playerWidth)){
+  //       collides = true;
+  //     }
+  //   } 
+  //   return collides;
+  // }
 
   // x and y are boxs and w is width of the square
-  function overLap(x1,x2,y1,y2,w1,w2) {
+  function overLap(x1,y1,x2,y2,w1,w2) {
 
     // If the x and y coordinates of opposite corners don't fall with in the bounds of both squares
     // Then they aren't touching

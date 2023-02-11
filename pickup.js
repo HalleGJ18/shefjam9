@@ -16,7 +16,6 @@ function GetNearestCake(cakes,playerCornerX,playerCornerY,playerWidth){
     //get distance from player to cake
     var dist = Math.sqrt((playerX-x)**2 + (playerY - y)**2);
     //store cake key and distance if it is new shortest distance
-    console.log(dist);
     if (dist<minDist){
       minDist = dist;
       nearestCake = key;
@@ -70,20 +69,33 @@ function PickUpCake(cakes,cakeNumber){
 }
 
 //deposit cakes given lex is next to the cart
-function deposit(carriedCakes){
+function DepositCakes(carriedCakes){
   //update score
+  console.log(score);
   score += carriedCakes;
   //empty bag storage
   carriedCakes = 0;
+  return carriedCakes;
 }
 
 function interactAction(spaceBar, cakes, playerX, playerY, playerWidth, cartX, cartY, cartImgWidth) {
   if (spaceBar){
     let nearestCake = GetNearestCake(cakes,playerX,playerY,playerWidth);
-    let deposit = CheckCartDistance(cartX,cartY,cartImgWidth,playerX,playerY,playerWidth);
-    console.log("Interaction!");
     //pick up nearest cake if nearestCake !== null
+    if (nearestCake !== null){
+      cakes = PickUpCake(cakes, nearestCake);
+      console.log("picked up a cake!");
+      console.log(carriedCakes);
+    }
+
+    let deposit = CheckCartDistance(cartX,cartY,cartImgWidth,playerX,playerY,playerWidth);
     //deposit cakes at cart if deposit == true
+    if (deposit && (carriedCakes>0)){
+      carriedCakes = DepositCakes(carriedCakes);
+      console.log("Deposited Cakes");
+      console.log("Score: " + score);
+      console.log("Carried cakes: " +carriedCakes);
+    }
     spaceBar = false;
   }
 }

@@ -45,7 +45,8 @@
     }
   }
   
-  //neccessary variables
+
+  //utility variables
   var canvasWidth = 1280;
   var canvasHeight = 720;
   
@@ -54,12 +55,50 @@
   var keyS = false;
   var keyD = false;
 
+  // tables 
+
+  var tables = [];
+  var tableImgs = []
+  var tableSideLen = 128;
+
+  function genTables(c){
+    let level1 = [[30,30,tableSideLen,tableSideLen],
+                  [158,30,tableSideLen,tableSideLen],
+                  [300,490,tableSideLen,tableSideLen],
+                  [870,450,tableSideLen,tableSideLen],
+                  [287,159,tableSideLen,tableSideLen],
+                  [1122,275,tableSideLen,tableSideLen],
+                  [700,350,tableSideLen,tableSideLen],
+                  [30,360,tableSideLen,tableSideLen],
+                  [700,30,tableSideLen,tableSideLen]]
+
+    tables = level1;
+
+    for (let i = 0; i < tables.length; i++) {
+      tableImgs[i] = new Image();
+      tableImgs[i].src = "./assets/table.png"
+      c.drawImage(tableImgs[i],level1[i][0],level1[i][1],level1[i][2], level1[i][3])
+    }
+  }
+
+
+  // cart
+
+  function drawCart(c){
+    var cartPos = [640-150, 720-150];
+    var cartImgSide = 300;
+    let cartImg = new Image();
+    cartImg.src = "./assets/cart.png";
+    c.drawImage(cartImg,cartPos[0],cartPos[1],cartImgSide,cartImgSide);
+  }
+
+
   // player character
 
   var offsetX = 10;
   var offsetY = 10;
 
-  var stepSize = 6;
+  var stepSize = 7;
 
   let playerSprite = new Image();
   playerSprite.src = "./assets/rexW.png";
@@ -68,13 +107,12 @@
 
 
   function movingSprite(c) {
-    // window.requestAnimationFrame(movingSprite);
-    
-    var canvas = document.getElementById("evilCanvas");
-    var c = canvas.getContext("2d");
     
     var imgWidth = 100;
     var imgHeight = 100;
+
+    // playerSprite.src = lastImg;
+
 
     if (keyD == true) {
       playerSprite.src = "./assets/rexD.png";
@@ -119,11 +157,15 @@
     c.drawImage(playerSprite, offsetX, offsetY, imgWidth, imgHeight);
   }
 
+
   // animation loop
   function animationLoop(){
     var canvas = document.getElementById("evilCanvas");
     var c = canvas.getContext("2d");
     c.clearRect(0, 0, canvasWidth, canvasHeight);
+    
+    drawCart(c);
+    genTables(c);
     renderCake(c)
     movingSprite(c)
 
@@ -131,13 +173,12 @@
       
       renderText(c, 'lmao')
     }
-    //console.log(CheckTableCollisions([640, 360, (640+128), (360+128)], offsetX, offsetY, 128));
     
     window.requestAnimationFrame(animationLoop)
 
   }
 
   window.onload = () => {
-    window.requestAnimationFrame(animationLoop)
+    window.requestAnimationFrame(animationLoop);
   }
   

@@ -69,8 +69,6 @@
 
   function movingSprite(c) {
     // window.requestAnimationFrame(movingSprite);
-
-    let playerSprite = new Image();
     
     var canvas = document.getElementById("evilCanvas");
     var c = canvas.getContext("2d");

@@ -13,7 +13,7 @@
     right: 0;
 }
 
-img {
+.introimg {
     position:absolute;
     top:0;
     left:0;
@@ -29,5 +29,5 @@ body {
 }
 
 .intro {
-    background: #fefde8;
+    background: #fbf8e7;
 }

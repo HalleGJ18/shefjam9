@@ -34,6 +34,7 @@ const cakeSize = tableSideLen/2;;
 var cakes = {};
 var num_of_cakes = 10;
 var cakeImgs = {};
+const cakeOptions = ["./assets/cake1.png", "./assets/cake2.png", "./assets/cake3.png", "./assets/alen.png"];
 
 // cart variables
 var cartImgSide = 300;

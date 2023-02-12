@@ -9,13 +9,6 @@ function isInArray(bigArr, smallArr){
   return present;
 }
 
-function renderCake(c){
-  let cakeSprite = new Image();
-  cakeSprite.src = "./assets/cake1.png"
-
-  c.drawImage(cakeSprite, 700, 350, 50, 50);
-}
-
 function genCakes(){
   var temp = [];
   var quads = [[0,0],[0,cakeSize],[cakeSize,0],[cakeSize,cakeSize]];
@@ -33,19 +26,40 @@ function genCakes(){
   for (let j=0; j<temp.length; j++) {
     cakes[j] = temp[j]
   }
+}
 
-  console.log(temp)
-  console.log(cakes)
+function chooseCake(){
+  let cakeSkin;
+  let randNum = Math.floor(Math.random() * 100);
+  if (randNum < 33) {
+    cakeSkin = cakeOptions[0]
+  } 
+  else if (randNum > 32 && randNum < 67){
+    cakeSkin = cakeOptions[1]
+  }
+  else if (randNum > 66 && randNum < 99){
+    cakeSkin = cakeOptions[2]
+  }
+  else {
+    cakeSkin = cakeOptions[3]
+  }
+  return cakeSkin;
+
 }
 
 function drawCakes(c){
   for (var key in cakes) {
-    cakeImgs[key] = new Image();
-    cakeImgs[key].src = "./assets/cake1.png";
     let currentCake = cakes[key];
     c.drawImage(cakeImgs[key], currentCake[0], currentCake[1], cakeSize, cakeSize);
   }
 }
 
 genCakes(tables);
+
+for (var key in cakes) {
+  cakeImgs[key] = new Image();
+  cakeImgs[key].src = chooseCake();
+}
+
+
 

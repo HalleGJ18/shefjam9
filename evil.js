@@ -69,8 +69,6 @@
     drawCart(c);
     drawTables(c);
     drawCakes(c);
-
-    // renderCake(c);
     movingSprite(c);
     
     //method signature/params may need to be edited once cake pickup is done

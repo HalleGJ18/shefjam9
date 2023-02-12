@@ -9,7 +9,7 @@
     position: absolute;
     top: 0;
     bottom: 0;
-    left: 0;
+    left: 1;
     right: 0;
 }
 
@@ -39,6 +39,11 @@ body {
 }
 
 #scores {
+    font-family: 'Courier New', monospace;
+    color: white;
+    font-size: 13px;
+}
+#scoreRank {
     font-family: 'Courier New', monospace;
     color: white;
     font-size: 13px;

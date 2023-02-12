@@ -83,6 +83,8 @@ function interactAction(spaceBar, cakes, playerX, playerY, playerWidth, cartX, c
     let nearestCake = GetNearestCake(cakes,playerX,playerY,playerWidth);
     //pick up nearest cake if nearestCake !== null
     if (nearestCake !== null){
+      let r = Math.floor(Math.random()*text.length)
+      textTimeOuts.push([globalTime + 100, text[r]])
       cakes = PickUpCake(cakes, nearestCake);
       textTimeOuts.push([globalTime + 100, cakes[nearestCake]])
       document.getElementById('carrying').innerHTML = "Carried Cakes: " + carriedCakes;
@@ -92,8 +94,8 @@ function interactAction(spaceBar, cakes, playerX, playerY, playerWidth, cartX, c
     //deposit cakes at cart if deposit == true
     if (deposit && (carriedCakes>0)){
       carriedCakes = DepositCakes(carriedCakes);
-      document.getElementById('score').innerHTML = "Score: " + score;
-      document.getElementById('carrying').innerHTML = "Carried Cakes: 0 " ;
+      document.getElementById('scoren').innerHTML = score;
+      document.getElementById('carryingn').innerHTML = " 0 " ;
     }
     spaceBar = false;
   }

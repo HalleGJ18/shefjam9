@@ -74,7 +74,7 @@ function genTables(){
                   [1000,430],
                 ];
     // level selection
-    tables = level4;
+    tables = level1;
   }
 
   function drawTables(c) {

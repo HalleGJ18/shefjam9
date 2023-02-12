@@ -3,6 +3,7 @@ let playerSprite = new Image();
 playerSprite.src = "./assets/rexW.png";
 
 var lastImg = "./assets/rexW.png";
+
 function movingSprite(c) {
 
   if (keyD == true) {

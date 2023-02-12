@@ -62,3 +62,9 @@ const comboText = [
 ]
 
 var comboMeter = 0;
+
+
+// regular man
+var regularManX = 0;
+var regularManY = 0;
+const regularManSideLen = 100;

@@ -18,7 +18,7 @@ function genTables(){
                 ];
     
     // level selection
-    tables = level2;
+    tables = level1;
   }
 
   function drawTables(c) {

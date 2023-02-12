@@ -98,14 +98,17 @@ function interactAction(spaceBar, cakes, playerX, playerY, playerWidth, cartX, c
       if(score === 10) {
         genTables()
         genCakes(tables);
+        resetCharacters()
       }else if (score === 20){
         genTables()
         genCakes(tables);
+        resetCharacters()
       }else if (score === 30){
         genTables()
         genCakes(tables);
+        resetCharacters()
       }else if (score === 40){
-        window.location.replace("loading.html");
+        window.location.replace("win.html");
       }
 
       document.getElementById('scoren').innerHTML = score;

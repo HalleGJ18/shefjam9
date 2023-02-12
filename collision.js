@@ -6,3 +6,8 @@ function overLap(x1,y1,x2,y2,w1,w2) {
   return !((x1 > x2 + w2 || x2 > x1 + w1) || (y1 > y2 + w2 || y2 > y1 + w1));
 }
 
+function regularIntoSex(){
+  if (overLap(offsetX, offsetY, regularManX + 10, regularManY + 10, 25, 25)){
+    window.location.replace("gameOver.html");
+  }
+}

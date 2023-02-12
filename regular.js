@@ -10,7 +10,7 @@
 //in format [xStep, yStep, direction]
 function getStepAmount(playerX,playerY,regularX,regularY){
     let length = Math.sqrt((playerX-regularX)**2 + (playerY - regularY)**2);
-    let scale = 2/length;
+    let scale = 1/length;
     let stepX = (playerX-regularX) * scale;
     let stepY = (playerY-regularY) * scale;
     let dir = 0;

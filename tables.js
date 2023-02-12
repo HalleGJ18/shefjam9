@@ -74,7 +74,17 @@ function genTables(){
                   [1000,430],
                 ];
     // level selection
-    tables = level4;
+    if (score == 10){
+      tables = level2;
+    }else if (score == 20){
+      tables = level3;
+    }else if (score == 30){
+      tables = level4;
+    }else {
+      tables = level1;
+    }
+
+    
   }
 
   function drawTables(c) {

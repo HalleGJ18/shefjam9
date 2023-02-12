@@ -13,6 +13,10 @@
     right: 0;
 }
 
+.nela{
+    padding-left: 70px;
+}
+
 .introimg {
     position:absolute;
     top:0;
@@ -35,34 +39,42 @@ body {
 #stats {
     font-family: 'Courier New', monospace;
     color: white;
-    font-size: 15px;
+    font-size: 30px;
+    font-weight: bold;
+    padding-top: 30px;
+    padding-left: 40px;
 }
 
 #scores {
     font-family: 'Courier New', monospace;
     color: white;
-    font-size: 13px;
+    font-size: 25px;
+    padding-left: 10px;
 }
 #scoreRank {
     font-family: 'Courier New', monospace;
     color: white;
-    font-size: 13px;
+    font-size: 25px;
+    padding-left: 10px;
 }
 
 #scoren {
     font-family: 'Courier New', monospace;
     color: green;
-    font-size: 13px;
+    font-size: 30px;
+    font-weight: bold;
 }
 
 #carryingn {
     font-family: 'Courier New', monospace;
     color: red;
-    font-size: 13px;
+    font-size: 30px;
+    font-weight: bold;
 }
 
 #carryings {
     font-family: 'Courier New', monospace;
     color: white;
-    font-size: 13px;
+    font-size: 25px;
+    padding-left: 10px;
 }

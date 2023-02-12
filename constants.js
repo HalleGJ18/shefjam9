@@ -14,11 +14,6 @@ var tables = [];
 var tableImgs = []
 const tableSideLen = 100;
 
-// player movement vaiables
-var offsetX = 500;
-var offsetY = 300;
-const stepSize = 7;
-
 //player size
 var playerWidth = 100;
 
@@ -40,6 +35,11 @@ const cakeOptions = ["./assets/cake1.png", "./assets/cake2.png", "./assets/cake3
 var cartImgSide = 300;
 var cartPosX = 640-(cartImgSide/2);
 var cartPosY = 720-(cartImgSide/2);
+
+// player movement vaiables
+var offsetX = cartPosX+100;
+var offsetY = cartPosY+10;
+const stepSize = 7;
 
 // time variables
 var globalTime = 0;

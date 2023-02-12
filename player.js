@@ -3,6 +3,7 @@ let playerSprite = new Image();
 playerSprite.src = "./assets/rexW.png";
 
 var lastImg = "./assets/rexW.png";
+
 function movingSprite(c) {
 
   if (keyD == true) {
@@ -34,4 +35,11 @@ function movingSprite(c) {
       }
   }
   c.drawImage(playerSprite, offsetX, offsetY, playerWidth, playerWidth);
+}
+
+function resetCharacters(){
+  offsetX = cartPosX+100;
+  offsetY = cartPosY+10;
+  regularManX = 0;
+  regularManY = 0;
 }

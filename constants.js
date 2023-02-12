@@ -58,7 +58,11 @@ const comboText = [
     "Naughty!",
     "How could you?",
     "EVIL!",
-    "You cad!"
+    "You cad!",
+    "Unspeakable!",
+    "Filthy!",
+    "Horrifying!",
+    "Awful!"
 ]
 
 var comboMeter = 0;

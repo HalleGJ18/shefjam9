@@ -104,6 +104,9 @@ function interactAction(spaceBar, cakes, playerX, playerY, playerWidth, cartX, c
       // }else {
       //   document.getElementById('scoreRank').innerHTML = scoreText[4];
       // }
+      if(score === 10) {
+        window.location.replace("loading.html");
+      }
       document.getElementById('scoren').innerHTML = score;
       document.getElementById('carryingn').innerHTML = " 0 " ;
     }

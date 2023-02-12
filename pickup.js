@@ -63,8 +63,8 @@ function PickUpCake(cakes,cakeNumber){
   //if space in evil bag for cake
   if (carriedCakes < bagSize){
     let r = Math.floor(Math.random()*text.length)
-    textTimeOuts.push([globalTime + 100, text[r]])
-    
+    textTimeOuts.push([globalTime + 100, text[r], cakes[cakeNumber][0], cakes[cakeNumber][1]])
+
     delete cakes[cakeNumber];
     carriedCakes += 1;
   }
@@ -74,7 +74,6 @@ function PickUpCake(cakes,cakeNumber){
 //deposit cakes given lex is next to the cart
 function DepositCakes(carriedCakes){
   //update score
-  console.log(score);
   score += carriedCakes;
   //empty bag storage
   carriedCakes = 0;

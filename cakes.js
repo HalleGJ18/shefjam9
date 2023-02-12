@@ -28,8 +28,6 @@ function genCakes(){
     if (!(isInArray(temp, coords))) {
       temp.push(coords);
     }
-
-    // console.log(temp.length)
   }
 
   for (let j=0; j<temp.length; j++) {
@@ -45,8 +43,6 @@ function drawCakes(c){
     cakeImgs[key] = new Image();
     cakeImgs[key].src = "./assets/cake1.png";
     let currentCake = cakes[key];
-    // console.log(key)
-    // console.log(currentCake)
     c.drawImage(cakeImgs[key], currentCake[0], currentCake[1], cakeSize, cakeSize);
   }
 }

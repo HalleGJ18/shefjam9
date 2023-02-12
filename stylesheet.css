@@ -39,6 +39,12 @@
     text-align: center;
 }
 
+#header2 {
+    font-family: 'Courier New', monospace;
+    font-size: 20px;
+    text-align: center;
+}
+
 body {
     margin: 0;
     background: #282c34;

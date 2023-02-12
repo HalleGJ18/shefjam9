@@ -2,7 +2,7 @@
 function genTables(){
     
 
-    let level1 = [[130,30], 
+    let level3 = [[130,30], 
                   [130,130],
                   [30,350],
                   [130,350],
@@ -19,7 +19,7 @@ function genTables(){
                   [1150,490]
                 ];
 
-    let level2 = [[30,150],
+    let level4 = [[30,150],
                 [130,150],
                 [200,490],
                 [300,490],
@@ -36,7 +36,7 @@ function genTables(){
                 [1040,590]
               ];
     
-    let level3 = [[30,200],
+    let level2 = [[30,200],
                   [30,475],
                   [330,30],
                   [650,30],
@@ -54,7 +54,7 @@ function genTables(){
                   [330,130],
                   [430,130]
                 ];
-    let level4 = [[190,30],
+    let level1 = [[190,30],
                   [190,130],
                   [190,230],
                   [190,330],
@@ -74,7 +74,7 @@ function genTables(){
                   [1000,430],
                 ];
     // level selection
-    tables = level1;
+    tables = level4;
   }
 
   function drawTables(c) {

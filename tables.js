@@ -11,7 +11,11 @@ function genTables(){
                   [700,30]
                 ];
 
-    let level2 = [[10,790]];
+    let level2 = [[130,30], 
+                  [130,130],
+                  [130,230],
+                  [500,30]
+                ];
     
     // level selection
     tables = level1;

@@ -47,11 +47,10 @@ var textTimeOuts = [];
 
 // text
 const scoreText = [
-    "that's good!",
-    "that's fine!",
-    "that's ok!",
-    "that's not great!",
-    "that's terrible!"
+    "that's inadequate!", // 10
+    "that's beastly!", // 20
+    "that's dreadful!", // 30
+    "that's terrible!" // 40 and thats as many as 4 tens and thats terrible
   ]
 
 const comboText = [

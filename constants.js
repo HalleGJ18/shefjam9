@@ -17,6 +17,13 @@ const tableSideLen = 100;
 //player size
 var playerWidth = 100;
 
+// player movement vaiables
+var offsetX = cartPosX + (cartImgSide/2 - playerWidth/2);
+var offsetY = cartPosY + 20;
+const stepSize = 7;
+
+
+
 //gameplay variables
 var bagSize = 4;
 var carriedCakes = 0;

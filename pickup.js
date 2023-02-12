@@ -77,6 +77,8 @@ function DepositCakes(carriedCakes){
   score += carriedCakes;
   //empty bag storage
   carriedCakes = 0;
+  let drop = new Audio("./assets/drop.mp3");
+  drop.play();
   return carriedCakes;
 }
 

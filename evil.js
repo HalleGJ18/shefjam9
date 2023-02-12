@@ -72,6 +72,9 @@
     drawRegular(c);
     movingSprite(c);
     
+    // collided in the air and both got hit by the carebear stare
+    regularIntoSex();
+
     //method signature/params may need to be edited once cake pickup is done
     //so cakes can stop being rendered, and score can be updated on deposit
     interactAction(spaceBar,cakes,offsetX,offsetY,playerWidth,cartPosX,cartPosY,cartImgSide);

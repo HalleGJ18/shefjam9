@@ -11,8 +11,8 @@ function GetNearestCake(cakes,playerCornerX,playerCornerY,playerWidth){
   //iterate through each cake in dict
   for (var key in cakes) {
     //get cake coords
-    var x = cakes[key][0];
-    var y = cakes[key][1];
+    var x = cakes[key][0] + cakeSize/2;
+    var y = cakes[key][1] + cakeSize/2;
     //get distance from player to cake
     var dist = Math.sqrt((playerX-x)**2 + (playerY - y)**2);
     //store cake key and distance if it is new shortest distance
@@ -24,7 +24,7 @@ function GetNearestCake(cakes,playerCornerX,playerCornerY,playerWidth){
   //if a cake has been found
   if(nearestCake !== null){
     //if cake is within grab range
-    if (minDist <= (playerWidth*1.25)){
+    if (minDist <= (playerWidth*1.2)){
       return nearestCake;
     }
     //if too far, return null

@@ -11,10 +11,14 @@ function genTables(){
                   [700,30]
                 ];
 
-    let level2 = [[10,790]];
+    let level2 = [[130,590], 
+                  [70,300],
+                  [1000,590],
+                  [500,30]
+                ];
     
     // level selection
-    tables = level1;
+    tables = level2;
   }
 
   function drawTables(c) {

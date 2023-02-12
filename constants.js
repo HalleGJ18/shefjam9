@@ -52,7 +52,7 @@ const text = [
     "that's ok!",
     "that's not great!",
     "that's terrible!",
-    "so villinous!",
+    "so villainous!",
     "naughty!",
     "how could you!",
     "evil!",

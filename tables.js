@@ -39,4 +39,3 @@ function genTables(){
   }
 
   genTables()
-  // console.log(tables)

@@ -24,7 +24,7 @@ var playerWidth = 100;
 
 // player movement vaiables
 var offsetX = cartPosX + (cartImgSide/2 - playerWidth/2);
-var offsetY = cartPosY ;
+var offsetY = cartPosY + 20;
 const stepSize = 7;
 
 

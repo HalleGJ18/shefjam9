@@ -62,6 +62,9 @@ function PickUpCake(cakes,cakeNumber){
   //remove cake from dictionary of all cakes
   //if space in evil bag for cake
   if (carriedCakes < bagSize){
+    let r = Math.floor(Math.random()*text.length)
+    textTimeOuts.push([globalTime + 100, text[r], cakes[cakeNumber][0], cakes[cakeNumber][1]])
+
     delete cakes[cakeNumber];
     carriedCakes += 1;
   }
@@ -71,7 +74,6 @@ function PickUpCake(cakes,cakeNumber){
 //deposit cakes given lex is next to the cart
 function DepositCakes(carriedCakes){
   //update score
-  console.log(score);
   score += carriedCakes;
   //empty bag storage
   carriedCakes = 0;
@@ -83,8 +85,6 @@ function interactAction(spaceBar, cakes, playerX, playerY, playerWidth, cartX, c
     let nearestCake = GetNearestCake(cakes,playerX,playerY,playerWidth);
     //pick up nearest cake if nearestCake !== null
     if (nearestCake !== null){
-      let r = Math.floor(Math.random()*text.length)
-      textTimeOuts.push([globalTime + 100, text[r]])
       cakes = PickUpCake(cakes, nearestCake);
       document.getElementById('carryingn').innerHTML = carriedCakes;
     }

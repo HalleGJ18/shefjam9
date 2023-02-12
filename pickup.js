@@ -63,6 +63,8 @@ function PickUpCake(cakes,cakeNumber){
   //if space in evil bag for cake
   if (carriedCakes < bagSize){
     addTextTimer(cakes[cakeNumber]);
+    let splat = new Audio("./assets/splat.mp3");
+    splat.play();
     delete cakes[cakeNumber];
     carriedCakes += 1;
   }

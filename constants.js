@@ -43,3 +43,17 @@ var cartPosY = 720-(cartImgSide/2);
 // time variables
 var globalTime = 0;
 var textTimeOuts = [];
+
+// text
+const text = [
+    "that's good!",
+    "that's fine!",
+    "that's ok!",
+    "that's not great!",
+    "that's terrible!",
+    "so villinous!",
+    "naughty!",
+    "how could you!",
+    "evil!",
+    "think of the shareholders qwq!"
+  ]

@@ -83,8 +83,9 @@ function interactAction(spaceBar, cakes, playerX, playerY, playerWidth, cartX, c
     let nearestCake = GetNearestCake(cakes,playerX,playerY,playerWidth);
     //pick up nearest cake if nearestCake !== null
     if (nearestCake !== null){
+      let r = Math.floor(Math.random()*text.length)
+      textTimeOuts.push([globalTime + 100, text[r]])
       cakes = PickUpCake(cakes, nearestCake);
-      textTimeOuts.push([globalTime + 100, cakes[nearestCake]])
       document.getElementById('carrying').innerHTML = "Carried Cakes: " + carriedCakes;
     }
 

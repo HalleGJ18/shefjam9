@@ -1,3 +1,8 @@
+function addTextTimer(cake) {
+  let r = Math.floor(Math.random()*comboText.length)
+  textTimeOuts.push([globalTime + 100, comboText[r], cake[0], cake[1]])
+}
+
 function renderText(c, text, x, y) {
   c.font = "bold 30px sans-serif";
   let gradient = c.createLinearGradient(x, y, x + 50, y + 100);
@@ -13,5 +18,4 @@ function renderPickUpText(c) {
       renderText(c, time[1], time[2], time[3]);
     }
   });
-
 }

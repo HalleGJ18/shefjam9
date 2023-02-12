@@ -46,15 +46,20 @@ var globalTime = 0;
 var textTimeOuts = [];
 
 // text
-const text = [
+const scoreText = [
     "that's good!",
     "that's fine!",
     "that's ok!",
     "that's not great!",
-    "that's terrible!",
-    "so villinous!",
-    "naughty!",
-    "how could you!",
-    "evil!",
-    "think of the shareholders qwq!"
+    "that's terrible!"
   ]
+
+const comboText = [
+    "SO Villainous!",
+    "Naughty!",
+    "How could you?",
+    "EVIL!",
+    "You cad!"
+]
+
+var comboMeter = 0;

@@ -44,7 +44,6 @@ function chooseCake(){
     cakeSkin = cakeOptions[3]
   }
   return cakeSkin;
-
 }
 
 function drawCakes(c){

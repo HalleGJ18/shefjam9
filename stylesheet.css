@@ -43,6 +43,11 @@ body {
     color: white;
     font-size: 13px;
 }
+#scoreRank {
+    font-family: 'Courier New', monospace;
+    color: white;
+    font-size: 13px;
+}
 
 #scoren {
     font-family: 'Courier New', monospace;

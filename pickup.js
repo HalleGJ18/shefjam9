@@ -95,17 +95,6 @@ function interactAction(spaceBar, cakes, playerX, playerY, playerWidth, cartX, c
     //deposit cakes at cart if deposit == true
     if (deposit && (carriedCakes>0)){
       carriedCakes = DepositCakes(carriedCakes);
-      // if(score < 10){
-      //   document.getElementById('scoreRank').innerHTML = scoreText[0];
-      // }else if(score >= 10 && score < 20){
-      //   document.getElementById('scoreRank').innerHTML = scoreText[1];
-      // }else if(score >= 20 && score < 30){
-      //   document.getElementById('scoreRank').innerHTML = scoreText[2];
-      // }else if(score >= 30 && score < 40){
-      //   document.getElementById('scoreRank').innerHTML = scoreText[3];
-      // }else {
-      //   document.getElementById('scoreRank').innerHTML = scoreText[4];
-      // }
       if(score === 10) {
         genTables()
         genCakes(tables);

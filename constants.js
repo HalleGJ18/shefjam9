@@ -58,7 +58,7 @@ const comboText = [
     "Naughty!",
     "How could you?",
     "EVIL!",
-    "You cad!",
+    "You scoundrel!",
     "Unspeakable!",
     "Filthy!",
     "Horrifying!",

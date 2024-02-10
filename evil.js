@@ -83,10 +83,18 @@
     renderPickUpText(c)
     
     globalTime += 1;
-    window.requestAnimationFrame(animationLoop)
+
+    setTimeout(() => {
+      requestAnimationFrame(animationLoop);
+    }, 1000 / fps);
   }
 
   window.onload = () => {
     window.requestAnimationFrame(animationLoop);
   }
-  
+
+
+function setfps(newFps) {
+  fps = newFps;
+}
+

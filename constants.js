@@ -1,6 +1,7 @@
 // canvas variables
 const canvasWidth = 1280;
 const canvasHeight = 720;
+var fps = 60;
 
 // key press variables
 var keyW = false;

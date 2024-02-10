@@ -87,8 +87,6 @@
     setTimeout(() => {
       requestAnimationFrame(animationLoop);
     }, 1000 / fps);
-
-    // window.requestAnimationFrame(animationLoop)
   }
 
   window.onload = () => {
